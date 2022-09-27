@@ -17,7 +17,7 @@ public class Score : MonoBehaviour
     void Update()
     {
         
-        Debug.Log("score =" + ScoreKeeper.Instance.whatScore());
+        //Debug.Log("score =" + ScoreKeeper.Instance.whatScore());
         scoreText.GetComponent<Text>().text = ("Score = " + ScoreKeeper.Instance.whatScore());
     }
 }
