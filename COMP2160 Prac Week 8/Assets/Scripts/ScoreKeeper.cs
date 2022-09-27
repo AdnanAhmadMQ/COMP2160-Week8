@@ -14,7 +14,7 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    void OnAwake()
+    void Awake()
     {
         //if(instance == null)
         //{
