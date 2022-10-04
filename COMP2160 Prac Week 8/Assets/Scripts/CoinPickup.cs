@@ -8,9 +8,17 @@ public class CoinPickup : MonoBehaviour
     {
         if (c.gameObject.GetComponent<PlayerMove>())
         {
-            Debug.Log("Coin hit");
-            ScoreKeeper.Instance.AddScore();
-            Destroy(this.gameObject);
+            if (c.gameObject.tag == "Player1")
+            {
+                ScoreKeeper.Instance.AddScoreP1();
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                ScoreKeeper.Instance.AddScoreP2();
+                Destroy(this.gameObject);
+            }
+            
         }
 
     }

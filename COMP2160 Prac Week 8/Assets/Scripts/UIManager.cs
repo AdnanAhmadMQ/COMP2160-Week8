@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] GameObject scoreText;
-    string scoreBaseText = "Score = ";
+    [SerializeField] GameObject scoreTextP1;
+    [SerializeField] GameObject scoreTextP2;
+    string scoreBaseTextP1 = "Player 1 Score = ";
+    string scoreBaseTextP2 = "Player 2 Score = ";
 
     static private UIManager instance;
     static public UIManager Instance
@@ -34,6 +36,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        scoreText.GetComponent<Text>().text = (scoreBaseText + ScoreKeeper.Instance.GetScore());
+        scoreTextP1.GetComponent<Text>().text = (scoreBaseTextP1 + ScoreKeeper.Instance.GetScoreP1());
+        scoreTextP2.GetComponent<Text>().text = (scoreBaseTextP2 + ScoreKeeper.Instance.GetScoreP2());
     }
 }
