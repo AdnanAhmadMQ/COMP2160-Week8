@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    static private ScoreKeeper instance;
+    [SerializeField] private int pointsPerCoin = 10;
+    private int currScore = 0;
 
+    static private ScoreKeeper instance;
     static public ScoreKeeper Instance
     {
         get
@@ -16,34 +18,29 @@ public class ScoreKeeper : MonoBehaviour
 
     void Awake()
     {
-        //if(instance == null)
-        //{
-        //    Debug.Log("there is no scorekeeper");
-        //}
+        if (instance == null)
+        {
+            Debug.Log("there is no scorekeeper");
+        }
+
         instance = this;
     }
 
-    private int score = 0;
-    [SerializeField] private int points = 10;
 
     public void AddScore()
     {
-        score += points;
+        currScore += pointsPerCoin;
+        UIManager.Instance.UpdateUI();
     }
 
-    public int whatScore()
+    public int GetScore()
     {
-        return score;
+        return currScore;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

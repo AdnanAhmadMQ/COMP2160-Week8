@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
@@ -10,7 +9,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScoreKeeper.Instance.AddScore();
+        //ScoreKeeper.Instance.AddScore();
     }
 
     // Update is called once per frame
@@ -18,6 +17,5 @@ public class Score : MonoBehaviour
     {
         
         //Debug.Log("score =" + ScoreKeeper.Instance.whatScore());
-        scoreText.GetComponent<Text>().text = ("Score = " + ScoreKeeper.Instance.whatScore());
     }
 }

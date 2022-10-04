@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class CoinPickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void OnTriggerEnter(Collider c)
     {
-        Destroy(this.gameObject);
-        Debug.Log("words");
+        if (c.gameObject.GetComponent<PlayerMove>())
+        {
+            Debug.Log("Coin hit");
+            ScoreKeeper.Instance.AddScore();
+            Destroy(this.gameObject);
+        }
     }
 }
