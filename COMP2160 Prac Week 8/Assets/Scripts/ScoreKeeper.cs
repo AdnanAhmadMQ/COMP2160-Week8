@@ -38,9 +38,4 @@ public class ScoreKeeper : MonoBehaviour
         return currScore;
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }

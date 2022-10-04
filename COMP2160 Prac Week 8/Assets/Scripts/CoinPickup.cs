@@ -6,11 +6,12 @@ public class CoinPickup : MonoBehaviour
 {
     void OnTriggerEnter(Collider c)
     {
-/*        if (c.gameObject.GetComponent<PlayerMove>())
+        if (c.gameObject.GetComponent<PlayerMove>())
         {
-        }*/
-        Debug.Log("Coin hit");
-        ScoreKeeper.Instance.AddScore();
-        Destroy(this.gameObject);
+            Debug.Log("Coin hit");
+            ScoreKeeper.Instance.AddScore();
+            Destroy(this.gameObject);
+        }
+
     }
 }

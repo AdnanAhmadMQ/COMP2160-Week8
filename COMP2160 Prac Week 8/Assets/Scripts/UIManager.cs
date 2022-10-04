@@ -32,11 +32,6 @@ public class UIManager : MonoBehaviour
         UpdateUI();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void UpdateUI()
     {
         scoreText.GetComponent<Text>().text = (scoreBaseText + ScoreKeeper.Instance.GetScore());
